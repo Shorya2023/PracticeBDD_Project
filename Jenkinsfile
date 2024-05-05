@@ -10,7 +10,7 @@ stage('Build')
 	}
 
 stage('Test')
-{
+		{
 	steps  {
 		     echo "Testing the code****************************************************************"
 			bat "mvn Test"
@@ -33,23 +33,8 @@ stage('Deploy')
 			
 			}
 		}
-
-
-
 }
 
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-}
