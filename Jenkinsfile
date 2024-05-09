@@ -28,10 +28,12 @@ stage('Test')
 
 
 
-stage('Deploy')
+stage('Cucumber Reports')
 		{
 			steps  {
-		 	echo "Deploying the code****************************************************************"
+		 		cucumber buildStatus: "UNSTABLE",
+				fileIncludePattern: "**/cucumber.json",
+				jsonReportDirectory: 'target'
 			
 			}
 		}
