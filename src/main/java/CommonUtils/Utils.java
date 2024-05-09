@@ -3,14 +3,13 @@ package CommonUtils;
 import java.time.Duration;
 import java.util.List;
 
-import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.sun.tools.sjavac.Log;
+
 
 import DriverManager.DriverManager;
 
@@ -22,7 +21,7 @@ public WebDriver driver;
     			public Utils() 
     				{
     	  				driver=DriverManager.getDriver();
-    	  				org.apache.logging.log4j.Logger log=LogManager.getLogger();
+    	  				//org.apache.logging.log4j.Logger log=LogManager.getLogger();
     	  				
     	  				//System.out.println("Utils driver initialized  from DriverManager");
     				}
