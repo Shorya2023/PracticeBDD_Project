@@ -34,7 +34,7 @@ public WebDriver driver;
 						WebDriverWait  wait = new WebDriverWait(driver,Duration.ofSeconds(DurationinSeconds));
 	    				ele=wait.until(ExpectedConditions.elementToBeClickable(WebElement_sLocator));
     					ele.click();
-    					Log.info(ele.getText() +"clicked successsfully");;
+    					//Log.info(ele.getText() +"clicked successsfully");;
     				}
     		
     					
@@ -44,7 +44,7 @@ public WebDriver driver;
     						WebDriverWait  wait = new WebDriverWait(driver,Duration.ofSeconds(DurationinSeconds));
     	    				ele=wait.until(ExpectedConditions.elementToBeClickable(WebElement_sLocator));
 						 	ele.sendKeys(Value);	
-						 	Log.info(ele.getText() +"value typed successsfully");
+						 	//Log.info(ele.getText() +"value typed successsfully");
 	    			}
     			
     			
@@ -74,7 +74,7 @@ public WebDriver driver;
 	    				System.out.println("title");
 						String pageTitle = driver.getTitle();
 	    				System.out.println("title****************************************"+pageTitle);
-	    				Log.info(pageTitle+"---page tile retrievd");
+	    				//Log.info(pageTitle+"---page tile retrievd");
 						return pageTitle;
 	    			}
 	    		
@@ -85,7 +85,7 @@ public WebDriver driver;
 	    						WebDriverWait  wait = new WebDriverWait(driver,Duration.ofSeconds(DurationinSeconds));
 	    	    				ele=wait.until(ExpectedConditions.elementToBeClickable(WebElement_sLocator));
 								String textOnElement = ele.getText();	
-			    				Log.info(ele.getText()+"---get the element");
+			    				//Log.info(ele.getText()+"---get the element");
 
 								return textOnElement;
 					}
@@ -99,12 +99,12 @@ public WebDriver driver;
 	    				ele=wait.until(ExpectedConditions.elementToBeClickable(WebElement_sLocator));
 		    			if (ele.isEnabled())
 		    			{
-		    				Log.info(ele.getText()+"---is enabled");
+		    				//Log.info(ele.getText()+"---is enabled");
 		    				return true;
 		    			}
 		    			else
 		    			{ 
-		    				Log.error(ele.getText()+"---is not enabled");
+		    				//Log.error(ele.getText()+"---is not enabled");
 		    				return false;
 		    			}
 
@@ -118,7 +118,7 @@ public WebDriver driver;
 	    				WebDriverWait  wait = new WebDriverWait(driver,Duration.ofSeconds(DurationinSeconds));
 	    				ele=wait.until(ExpectedConditions.elementToBeClickable(WebElement_sLocator));
 	    				List <WebElement> totalElement = driver.findElements(WebElement_sLocator);
-	    				Log.info(totalElement+"---count of element");
+	    				//Log.info(totalElement+"---count of element");
 
 						return totalElement.size();
                    }

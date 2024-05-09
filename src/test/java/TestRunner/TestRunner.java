@@ -11,7 +11,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions
 (
-		features={"src\\test\\resources\\Features"},
+		features={"src\\test\\resources\\Features\\AccountsPage.feature"},
 		glue={"Stepdefinitions","Hooks"},
 				//tags= ("SmokeTests"),
 		monochrome=true,
