@@ -1,7 +1,7 @@
 pipeline{
 agent any
 stages{
-stage('Compile Stage')
+stage('Build')
 	{
 	steps  {
  			echo "building the code****************************************************************"
@@ -9,14 +9,24 @@ stage('Compile Stage')
 		}
 	}
 
-	
+stage('Compile')
+		{
+		steps  {
+ 		echo "Compile the code****************************************************************"
+		bat "mvn Compile"
+			}
+		}
+
+
 stage('Test')
-	{
+		{
 	steps  {
 		     echo "Testing the code****************************************************************"
 			bat "mvn Test"
 			}
-	}
+		}
+
+
 
 
 
