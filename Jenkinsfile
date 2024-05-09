@@ -26,6 +26,14 @@ stage('Test')
 			}
 		}
 
+stage('Test')
+		{
+	steps  {
+		     echo "deploy the code****************************************************************"
+			bat "mvn Deploy"
+			}
+		}
+
 
 
 
