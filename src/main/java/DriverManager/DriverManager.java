@@ -18,6 +18,8 @@ public class DriverManager {
 	   
 	   public static ThreadLocal<WebDriver> threadlocaldriver=  new ThreadLocal<>();
 	   
+	   //public static ThreadLocal<Webdriver> threadlocaldriver1= new ThreadLocal<>();
+	   
 	   /**
 	    * This method to initialize the driver in Threadlocal mode
 	    * @param browser
@@ -33,12 +35,41 @@ public class DriverManager {
 			   }
 			   else if (browser.equalsIgnoreCase("firefox"))
 			   {
-				   WebDriverManager.chromedriver().setup();
+				   WebDriverManager.firefoxdriver().setup();
 				   	threadlocaldriver.set(new FirefoxDriver());
 			   }
 			   else if (browser.equalsIgnoreCase("edge"))
 			   {
+				   WebDriverManager.edgedriver().setup();
+				   	threadlocaldriver.set(new EdgeDriver());
+			   }	   
+			   else {
+				   
+				     System.out.println("pls select correct browser EDGE |  CHROME |  FIREFOX");
+			   	}
+			   
+			   getDriver().manage().deleteAllCookies();
+			   getDriver().manage().window().maximize();
+			    return getDriver();	   
+	   }   
+	   
+	   
+	   public WebDriver launchBrowser()
+	   {
+		   //   Browser type value initialized at before scenario in Hooks
+			   if (System.getProperty("browser").equalsIgnoreCase("chrome"))
+			   {
 				   WebDriverManager.chromedriver().setup();
+				   	threadlocaldriver.set(new ChromeDriver());
+			   }
+			   else if (System.getProperty("browser").equalsIgnoreCase("firefox"))
+			   {
+				   WebDriverManager.firefoxdriver().setup();
+				   	threadlocaldriver.set(new FirefoxDriver());
+			   }
+			   else if (System.getProperty("browser").equalsIgnoreCase("edge"))
+			   {
+				   WebDriverManager.edgedriver().setup();
 				   	threadlocaldriver.set(new EdgeDriver());
 			   }	   
 			   else {

@@ -15,10 +15,11 @@ import io.cucumber.testng.CucumberOptions;
 				monochrome=true,
 					dryRun=false,
 		
-		plugin={"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
+		plugin={"pretty","json:target/cucumber.json","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"timeline:test-output-thread/",
 				"rerun:target/failedrerun.txt"
 		}
+		//publish= {"json:target/cucumber.json"}
 )
 
 public class TestRunnerWithTestng extends AbstractTestNGCucumberTests {

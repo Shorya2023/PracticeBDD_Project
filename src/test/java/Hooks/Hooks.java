@@ -6,6 +6,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
+import CommonUtils.AppConfig;
 import CommonUtils.ConfigReader;
 import DriverManager.DriverManager;
 import io.cucumber.java.After;
@@ -23,12 +24,17 @@ public class Hooks {
 	{
 		System.out.println("*******************Hooks*****************************");
 		//config reader object for properties file access
-		prop = ConfigReader.init_Prop();
-				
+				prop = ConfigReader.init_Prop();
+				drivermanager= new DriverManager();
+			
 		//drivermanager to launch browser
-		String sBrowserType= prop.getString("sbrowsertype");
-		drivermanager= new DriverManager();
-		driver = drivermanager.initDriver(sBrowserType);
+			String sBrowserType= prop.getString("sbrowsertype");
+			//String sBrowserType= AppConfig.browser;
+			String url=AppConfig.url;
+			driver = drivermanager.initDriver(sBrowserType);
+			
+		//prop = ConfigReader.init_Prop();
+			DriverManager.getDriver().get(url);
 		
 	}
 	

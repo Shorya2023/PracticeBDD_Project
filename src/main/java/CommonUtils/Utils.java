@@ -3,11 +3,14 @@ package CommonUtils;
 import java.time.Duration;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.sun.tools.sjavac.Log;
 
 import DriverManager.DriverManager;
 
@@ -19,6 +22,8 @@ public WebDriver driver;
     			public Utils() 
     				{
     	  				driver=DriverManager.getDriver();
+    	  				org.apache.logging.log4j.Logger log=LogManager.getLogger();
+    	  				
     	  				//System.out.println("Utils driver initialized  from DriverManager");
     				}
       
@@ -28,7 +33,8 @@ public WebDriver driver;
 						WebElement ele=null;
 						WebDriverWait  wait = new WebDriverWait(driver,Duration.ofSeconds(DurationinSeconds));
 	    				ele=wait.until(ExpectedConditions.elementToBeClickable(WebElement_sLocator));
-    					ele.click();						
+    					ele.click();
+    					Log.info(ele.getText() +"clicked successsfully");;
     				}
     		
     					
@@ -37,7 +43,8 @@ public WebDriver driver;
     						WebElement ele=null;
     						WebDriverWait  wait = new WebDriverWait(driver,Duration.ofSeconds(DurationinSeconds));
     	    				ele=wait.until(ExpectedConditions.elementToBeClickable(WebElement_sLocator));
-						 	ele.sendKeys(Value);				
+						 	ele.sendKeys(Value);	
+						 	Log.info(ele.getText() +"value typed successsfully");
 	    			}
     			
     			
@@ -47,6 +54,7 @@ public WebDriver driver;
 						WebDriverWait  wait = new WebDriverWait(driver,Duration.ofSeconds(DurationinSeconds));
 						 ele=wait.until(ExpectedConditions.elementToBeClickable(WebElement_sLocator));
 						return ele;
+						
     				}
     			
     			
@@ -66,8 +74,8 @@ public WebDriver driver;
 	    				System.out.println("title");
 						String pageTitle = driver.getTitle();
 	    				System.out.println("title****************************************"+pageTitle);
-	
-						return pageTitle;		
+	    				Log.info(pageTitle+"---page tile retrievd");
+						return pageTitle;
 	    			}
 	    		
     			
@@ -77,6 +85,8 @@ public WebDriver driver;
 	    						WebDriverWait  wait = new WebDriverWait(driver,Duration.ofSeconds(DurationinSeconds));
 	    	    				ele=wait.until(ExpectedConditions.elementToBeClickable(WebElement_sLocator));
 								String textOnElement = ele.getText();	
+			    				Log.info(ele.getText()+"---get the element");
+
 								return textOnElement;
 					}
 		    		
@@ -89,10 +99,12 @@ public WebDriver driver;
 	    				ele=wait.until(ExpectedConditions.elementToBeClickable(WebElement_sLocator));
 		    			if (ele.isEnabled())
 		    			{
+		    				Log.info(ele.getText()+"---is enabled");
 		    				return true;
 		    			}
 		    			else
 		    			{ 
+		    				Log.error(ele.getText()+"---is not enabled");
 		    				return false;
 		    			}
 
@@ -106,6 +118,8 @@ public WebDriver driver;
 	    				WebDriverWait  wait = new WebDriverWait(driver,Duration.ofSeconds(DurationinSeconds));
 	    				ele=wait.until(ExpectedConditions.elementToBeClickable(WebElement_sLocator));
 	    				List <WebElement> totalElement = driver.findElements(WebElement_sLocator);
+	    				Log.info(totalElement+"---count of element");
+
 						return totalElement.size();
                    }
                    

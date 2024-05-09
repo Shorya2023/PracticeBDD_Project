@@ -1,4 +1,4 @@
-package Stepdefinitions;
+ package Stepdefinitions;
 
 import java.util.ResourceBundle;
 
@@ -21,10 +21,6 @@ public class LoginPageSteps {
 	@Given("User is on login page")
 	public void user_is_on_login_page1() throws InterruptedException {
 		System.out.println("******************STARTED EXECUTION*************************");
-		prop = ConfigReader.init_Prop();
-		DriverManager.getDriver().get(prop.getString("url"));
-
-		Thread.sleep(12000);
 	}
 
 	
