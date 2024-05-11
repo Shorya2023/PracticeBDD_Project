@@ -22,7 +22,7 @@ stage('Test')
 		{
 	steps  {
 		     echo "Testing the code****************************************************************"
-			bat "mvn Test"
+			bat "mvn Verify"
 			}
 		}
 
