@@ -9,14 +9,9 @@ stage('Build')
 		}
 	}
 
-stage('Compile')
-		{
-		steps  {
- 		echo "Compile the code****************************************************************"
-		bat "mvn Compile"
-			}
-		}
 
+
+	
 
 stage('Test')
 		{
@@ -27,7 +22,25 @@ stage('Test')
 		}
 
 
+stage('Compile')
+		{
+		steps  {
+ 		echo "Compile the code****************************************************************"
+		bat "mvn Compile"
+			}
+		}
 
+
+
+stage('Deploy')
+		{
+			steps  {
+		 	echo "Deploying the code****************************************************************"
+			
+			}
+		}
+
+	
 stage('Cucumber Reports')
 		{
 			steps  {
