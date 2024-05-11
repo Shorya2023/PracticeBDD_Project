@@ -9,11 +9,19 @@ stage('Build')
 		}
 	}
 
-	
-	stage('Test')
+stage('Compile')
+		{
+		steps  {
+ 		echo "Compile the code****************************************************************"
+		bat "mvn Compile"
+			}
+		}
+
+
+stage('Test')
 		{
 	steps  {
-		     	echo "Testing the code****************************************************************"
+		     echo "Testing the code****************************************************************"
 			bat "mvn Test"
 			}
 		}
