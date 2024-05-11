@@ -5,23 +5,15 @@ stage('Build')
 	{
 	steps  {
  			echo "building the code****************************************************************"
-			bat "mvn clean install"
+			bat "mvn clean"
 		}
 	}
 
-stage('Compile')
-		{
-		steps  {
- 		echo "Compile the code****************************************************************"
-		bat "mvn Compile"
-			}
-		}
-
-
-stage('Test')
+	
+	stage('Test')
 		{
 	steps  {
-		     echo "Testing the code****************************************************************"
+		     	echo "Testing the code****************************************************************"
 			bat "mvn Test"
 			}
 		}
