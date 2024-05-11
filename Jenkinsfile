@@ -1,13 +1,13 @@
 pipeline{
-agent any
-stages{
-stage('Build')
-	{
-	steps  {
- 			echo "building the code****************************************************************"
-			bat "mvn clean install"
+	agent any
+		stages	{
+		stage('Build')
+		{
+		steps  {
+	 			echo "building the code****************************************************************"
+				bat "mvn clean install"
+			}
 		}
-	}
 
 stage('Compile')
 		{
@@ -28,8 +28,8 @@ stage('Test')
 
 stage('Test')
 		{
-	steps  {
-		     echo "deploy the code****************************************************************"
+	steps  		{
+		     	echo "deploy the code****************************************************************"
 			bat "mvn Deploy"
 			}
 		}
