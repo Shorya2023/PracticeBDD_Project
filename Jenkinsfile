@@ -1,13 +1,13 @@
 pipeline{
-	agent any
-		stages	{
-		stage('Build')
-		{
-		steps  {
-	 			echo "building the code****************************************************************"
-				bat "mvn clean install"
-			}
+agent any
+stages{
+stage('Build')
+	{
+	steps  {
+ 			echo "building the code****************************************************************"
+			bat "mvn clean install"
 		}
+	}
 
 stage('Compile')
 		{
@@ -22,20 +22,9 @@ stage('Test')
 		{
 	steps  {
 		     echo "Testing the code****************************************************************"
-			bat "mvn Verify"
+			bat "mvn Test"
 			}
 		}
-
-stage('Test')
-		{
-	steps  		{
-		     	echo "deploy the code****************************************************************"
-			bat "mvn Deploy"
-			}
-		}
-
-
-
 
 
 stage('Cucumber Reports')
