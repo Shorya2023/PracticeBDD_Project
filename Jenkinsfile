@@ -5,28 +5,24 @@ stage('Build')
 	{
 	steps  {
  			echo "building the code****************************************************************"
-			bat "mvn clean"
+			bat "mvn clean install"
 		}
 	}
-
-
-
-	
-
-stage('Test')
-		{
-	steps  {
-		     echo "Testing the code****************************************************************"
-			bat "mvn Test"
-			}
-		}
-
 
 stage('Compile')
 		{
 		steps  {
  		echo "Compile the code****************************************************************"
 		bat "mvn Compile"
+			}
+		}
+
+
+stage('Test')
+		{
+	steps  		{
+		     echo "Testing the code****************************************************************"
+			bat "mvn Test"
 			}
 		}
 
@@ -39,7 +35,6 @@ stage('Deploy')
 			
 			}
 		}
-
 	
 stage('Cucumber Reports')
 		{
